@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArgenMatch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1 id="form-title">Iniciar Sesión</h1>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="login-email">Correo</label>
+          <input type="email" id="login-email" required />
+        </div>
+        <div class="input-group">
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" required />
+        </div>
+        <button type="submit">Entrar</button>
+        <p class="switch">¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
+      </form>
+
+      <form id="register-form" class="hidden">
+        <div class="input-group">
+          <label for="register-username">Usuario</label>
+          <input type="text" id="register-username" required />
+        </div>
+        <div class="input-group">
+          <label for="register-email">Correo</label>
+          <input type="email" id="register-email" required />
+        </div>
+        <div class="input-group">
+          <label for="register-password">Contraseña</label>
+          <input type="password" id="register-password" required />
+        </div>
+        <button type="submit">Registrarse</button>
+        <p class="switch">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión</a></p>
+      </form>
+
+      <div class="theme-toggle">
+        <label>
+          <input type="checkbox" id="dark-mode-toggle" /> Modo oscuro
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
