@@ -20,3 +20,30 @@ showLogin.addEventListener('click', () => {
 toggleTheme.addEventListener('change', () => {
   document.body.classList.toggle('dark-mode', toggleTheme.checked);
 });
+const registerForm = document.getElementById('register-form');
+
+registerForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById('register-username').value;
+  const email = document.getElementById('register-email').value;
+  const password = document.getElementById('register-password').value;
+
+  const webhookURL = https://script.google.com/macros/s/AKfycbwdUGZXyvvjimpasDKDVn3A7A--X-R45Sm_JIWl6-2eG9KkuDJDE0D0cngJiWkiVSt_/exec; // ← acá poné tu URL de Google Script
+
+  try {
+    await fetch(webhookURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, email, password })
+    });
+    alert('¡Registro enviado!');
+    registerForm.reset();
+  } catch (error) {
+    alert('Error al registrar');
+    console.error(error);
+  }
+});
